@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-${MYSQL_NAME}
+  labels: 
+    app: mysql
+    mysql-instance: ${MYSQL_NAME}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+      mysql-instance: ${MYSQL_NAME}
+  template:
+    metadata:
+      labels:
+        app: mysql
+        mysql-instance: ${MYSQL_NAME}
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:${MYSQL_VERSION}
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: ${MYSQL_PASSWORD}
+        - name: MYSQL_DATABASE
+          value: ${MYSQL_DATABASE}
+        - name: MYSQL_USER
+          value: ${MYSQL_USER}
+
