@@ -5,8 +5,8 @@ FROM mikefarah/yq:4
 WORKDIR /operator
 
 # Copy your scripts and templates into the image
-COPY mysql-deployment-template.yaml /operator/mysql-deployment-template.yaml
-COPY controller-script.sh /operator/controller-script.sh
+COPY /src/resources/mysql-deployment-template.yaml /operator/mysql-deployment-template.yaml
+COPY /src/controller/controller-script.sh /operator/controller-script.sh
 
 # Switch to the root user to install necessary packages
 USER root
