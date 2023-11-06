@@ -1,7 +1,7 @@
 # Shell-Operator - MySQL-Operator
 Shell Operator using simple kubectl commands
 
-The Shell Operator Framework introduces a novel approach to writing operators for Kubernetes, lowering the entry barrier by eliminating the necessity of proficiency in the Go programming language, which is traditionally used for this purpose. This framework leverages shell scripting to encapsulate operational logic, enabling developers to construct operators using a more accessible and straightforward scripting approach.
+The Shell Operator Framework introduces a novel approach to writing operators for Kubernetes, lowering the entry barrier by eliminating the necessity of proficiency in the Go programming language or Any Operator SDK, which is traditionally used for this purpose. This framework leverages shell scripting to encapsulate operational logic, enabling developers to construct operators using a more accessible and straightforward scripting approach.
 
 As a Proof of Concept (PoC) demonstrating the viability and ease of this framework, we've created a MySQL Operator. This operator performs basic CRUD (Create, Read, Update, Delete) operations to manage MySQL instances within a Kubernetes cluster. By adhering to a native Kubernetes workflow, it monitors custom resource definitions (CRDs) and reacts to the cluster's state changes to ensure the desired state of MySQL instances is achieved and maintained.
 
