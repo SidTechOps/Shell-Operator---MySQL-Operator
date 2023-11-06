@@ -30,12 +30,12 @@ kind load docker-image yourusername/mysql-operator:latest
 
 1. Create the MySqlDatabase custom resource definition:
 ```
-kubectl apply -f mysqldatabase-crd.yaml
+kubectl apply -f /src/crd/mysqldatabase-crd.yaml
 ```
 
 2. Deploy the operator:
 ```
-kubectl apply -f mysql-operator.yaml
+kubectl apply -f /src/operator/mysql-operator.yaml
 ```
 
 output:
@@ -61,7 +61,7 @@ mysqldatabases.example.com   2023-11-05T15:47:16Z
 
 1. To create a MySQL database, apply a mysql-request.yaml manifest:
 ```
-kubectl apply -f mysql-request.yaml
+kubectl apply -f /tests/mysql-request.yaml
 ```
 output:
 ```
@@ -88,7 +88,7 @@ default              mysql-my-database-ccd4bc56b-9fbw4                1/1     Ru
 ```
 2. To delete a MySQL database, delete the corresponding MySqlDatabase custom resource:
 ```
-kubectl delete -f mysql-request.yaml
+kubectl delete -f /tests/mysql-request.yaml
 #or 
 kubectl delete mysqldatabase my-database
 ```
@@ -138,7 +138,7 @@ deployment.apps "mysql-my-database" deleted
 ## Clean up
 To remove the operator and the MySqlDatabase CRD:
 ```
-kubectl delete -f mysql-operator.yaml
+kubectl delete -f /src/operator/mysql-operator.yaml
 kubectl delete crd mysqldatabases.example.com
 ```
 
